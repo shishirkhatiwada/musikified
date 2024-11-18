@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const songSchema = mongoose.Schema(
+const songSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     artist: { type: String, required: true },
@@ -10,7 +10,7 @@ const songSchema = mongoose.Schema(
     albumId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Album",
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }
