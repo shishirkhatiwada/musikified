@@ -7,7 +7,9 @@ import path from "path";
 const __dirname = path.resolve();
 
 dotenv.config({});
+const app = express();
 app.use(express.json());
+
 app.use(clerkMiddleware()); // this will add auth to req obj => we will get userId, and other things from clerk
 app.use(
   fileUpload({
@@ -26,8 +28,6 @@ import songRoutes from "./routes/songs.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import albumbRoutes from "./routes/album.routes.js";
 import connectDb from "./lib/db.js";
-
-const app = express();
 
 const PORT = 8080;
 
