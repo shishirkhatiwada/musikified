@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 
 dotenv.config({})
+app.use(express.json())
 
 import userRoutes from "./routes/user.routes.js"
 import adminRoutes from "./routes/admin.routes.js"
