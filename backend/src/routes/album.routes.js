@@ -2,10 +2,8 @@ import { Router } from "express";
 
 const route = Router()
 
-route.get("/album", (req,res)=>{
-    console.log(`This is an album route`);
-    
-})
+route.get("/", getAllAlbum )
+route.get("/:albumId", getAlbumById)
 
 
 export default route
