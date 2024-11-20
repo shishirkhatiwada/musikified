@@ -1,11 +1,10 @@
 import { Router } from "express";
+import { protectedRoute } from "../middleware/auth.middleware.js";
+import { getAllUsers } from "../controller/user.controller.js";
 
 const route = Router()
 
-route.get('/', (req,res)=>{
-    req.auth.userId
-    res.send("This is an admin route")
-})
+route.get('/', protectedRoute, getAllUsers)
 
 
 
