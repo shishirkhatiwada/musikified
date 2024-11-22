@@ -1,11 +1,9 @@
 import { Router } from "express";
 import { protectedRoute } from "../middleware/auth.middleware.js";
-import { authCallback } from "../controller/user.controller.js";
+import { getAllUsers } from "../controller/user.controller.js";
 
-const route = Router()
+const route = Router();
 
-route.get('/', protectedRoute, authCallback)
+route.get("/", protectedRoute, getAllUsers);
 
-
-
-export default route
+export default route;
